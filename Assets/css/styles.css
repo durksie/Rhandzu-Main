@@ -25,7 +25,7 @@ body {
 }
 
 .navbar.scrolled {
-    background-color: #f3a812; /* Change to white when scrolled */
+    background-color: #12f337; /* Change to white when scrolled */
 }
 
 .logo img {
@@ -50,7 +50,7 @@ body {
 }
 
 .nav-links a:hover {
-    color: #F3A712; /* Gold */
+    color: black; /* Gold */
     background-color: rgba(243, 167, 18, 0.2); /* Add a subtle hover background */
 }
 
@@ -93,6 +93,7 @@ body {
         right: 0;
         height: 100vh;
         width: 60%;
+       
         background-color: #F3A712; /* Fresh Green */
         flex-direction: column;
         align-items: center;
