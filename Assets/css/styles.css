@@ -1,0 +1,585 @@
+/* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(248, 248, 248, 0.258); /* Semi-transparent background */
+    position: fixed; /* Fix the navbar at the top */
+    top: 0;
+    left: 0; /* Add left position */
+    right: 0; /* Add right position */
+    z-index: 10; /* Ensure it sits above other content */
+    padding: 1rem 2rem; /* Add padding for better spacing */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.navbar.scrolled {
+    background-color: #f3a812; /* Change to white when scrolled */
+}
+
+.logo img {
+    width: 150px;
+    height: auto; /* Maintain aspect ratio */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem; /* Space between links */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #FAF9F6; /* Off-White */
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 0.5rem 1rem; /* Add padding for better clickability */
+    border-radius: 5px; /* Add slight rounding */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Add transitions for hover effects */
+}
+
+.nav-links a:hover {
+    color: #F3A712; /* Gold */
+    background-color: rgba(243, 167, 18, 0.2); /* Add a subtle hover background */
+}
+
+/* Call-to-Action Button */
+.cta-button {
+    background-color: #F3A712; /* Gold */
+    color: #FAF9F6; /* Off-White */
+    padding: 0.6rem 1.4rem;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #4FA930; /* Soft Green */
+    transform: scale(1.05);
+}
+
+/* Burger Menu for Mobile */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger-menu div {
+    width: 28px;
+    height: 3px;
+    background-color: #FAF9F6; /* Off-White */
+    margin: 4px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 60%;
+        background-color: #F3A712; /* Fresh Green */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        padding-top: 5rem; /* Add padding to accommodate for logo and potential overlap */
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    .burger-menu {
+        display: flex; /* Show burger menu on mobile */
+    }
+
+    /* Burger Menu Animation */
+    .burger-menu.active .line1 {
+        transform: rotate(-45deg) translate(-5px, 5px);
+    }
+
+    .burger-menu.active .line2 {
+        opacity: 0;
+    }
+
+    .burger-menu.active .line3 {
+        transform: rotate(45deg) translate(-5px, -5px);
+    }
+}
+
+/* Hero Section Styles */
+.hero {
+    position: relative;
+    height: 100vh; 
+    background-image: url('../images/background.png'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FAF9F6; /* Off-White for text */
+    margin-top: -0%; /* Adjust this value to match the navbar height */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for contrast */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.hero-content {
+    text-align: center;
+    padding: 2rem;
+    z-index: 1; /* Ensure content is above the overlay */
+}
+
+.hero h1 {
+    font-size: 3.5rem; /* Increased size for prominence */
+    margin-bottom: 1rem;
+    font-weight: bold; /* Make the heading bold */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Soft shadow for better readability */
+}
+
+.hero p {
+    font-size: 1.3rem; /* Slightly larger for readability */
+    margin-bottom: 2rem;
+    line-height: 1.6; /* Increased line height for better readability */
+    max-width: 600px; /* Limit width for better text alignment */
+    margin-left: auto; /* Center text alignment */
+    margin-right: auto; /* Center text alignment */
+}
+
+.cta-button {
+    background-color: #F3A712; /* Gold */
+    color: #FAF9F6; /* Off-White */
+    padding: 0.8rem 2rem; /* Increased padding for a more prominent button */
+    font-size: 1.4rem; /* Slightly larger font size */
+    border: none;
+    border-radius: 30px; /* More rounded corners */
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+}
+
+.cta-button:hover {
+    background-color: #4FA930; /* Soft Green */
+    transform: scale(1.1); /* Slightly increase scale on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow on hover */
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem; /* Adjust font size for smaller screens */
+    }
+
+    .hero p {
+        font-size: 1rem; /* Adjust font size for smaller screens */
+        padding: 0 1rem; /* Add some horizontal padding */
+    }
+
+    .cta-button {
+        padding: 0.6rem 1.5rem; /* Adjust padding for smaller screens */
+        font-size: 1.2rem; /* Slightly smaller font size */
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.image-section {
+    width: 100%;
+    max-width: 600px;
+}
+
+.image-section img {
+    width: 100%;
+    height: auto; /* Ensures responsiveness */
+    object-fit: cover; /* Change to contain if you prefer the entire image */
+    border-radius: 10px;
+}
+
+.content-section {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.title {
+    color: #92400e;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.description {
+    color: #78350f;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    color: #92400e;
+    font-size: 1.8em;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    color: #78350f;
+    font-size: 0.9em;
+}
+
+.mission-btn {
+    background-color: #92400e;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.3s, transform 0.3s; /* Added transform transition */
+}
+
+.mission-btn:hover {
+    background-color: #78350f;
+    transform: scale(1.05); /* Added scale effect */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #92400e;
+}
+
+.modal-title {
+    color: #92400e;
+    font-size: 2em;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.modal-text {
+    color: #78350f;
+    font-size: 1.1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.values-list {
+    background-color: #fff7ed;
+    padding: 24px;
+    border-radius: 8px;
+}
+
+.values-list h3 {
+    color: #92400e;
+    font-size: 1.4em;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.values-list ul {
+    list-style-position: inside;
+    color: #78350f;
+    font-size: 1em;
+}
+
+.values-list li {
+    margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 30px;
+    }
+
+    .title {
+        font-size: 2em;
+    }
+
+    .description {
+        font-size: 1em;
+    }
+
+    .stat-number {
+        font-size: 1.5em;
+    }
+
+    .stat-label {
+        font-size: 0.8em;
+    }
+
+    .modal-title {
+        font-size: 1.8em;
+    }
+
+    .modal-text {
+        font-size: 1em;
+    }
+
+    .values-list h3 {
+        font-size: 1.2em;
+    }
+
+    .values-list ul {
+        font-size: 0.9em;
+    }
+}
+
+.menuu{
+    background-color: #fff;
+    margin-top: 5%;
+}
+
+.menu-container {
+    margin-top: 10%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.menu-title {
+    text-align: center;
+    color: #8c2f39;
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.menu-section {
+    margin-bottom: 50px;
+}
+
+.menu-section-title {
+    color: #8c2f39;
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.menu-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+}
+
+.menu-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.menu-card-content {
+    padding: 20px;
+    text-align: center;
+}
+
+.menu-item-name {
+    font-weight: 600;
+    color: #8c2f39;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.menu-item-description {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.menu-item-price {
+    font-weight: 600;
+    color: #d4414e;
+    font-size: 1.1em;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    .menu-title {
+        font-size: 2.2em;
+    }
+
+    .menu-section-title {
+        font-size: 1.6em;
+    }
+
+    .menu-item-name {
+        font-size: 1.1em;
+    }
+
+    .menu-item-description, .menu-item-price {
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 992px) {
+    .menu-title {
+        font-size: 2em;
+    }
+
+    .menu-section-title {
+        font-size: 1.5em;
+    }
+
+    .menu-card img {
+        height: 160px;
+    }
+
+    .menu-item-name {
+        font-size: 1em;
+    }
+
+    .menu-item-description, .menu-item-price {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-title {
+        font-size: 1.8em;
+    }
+
+    .menu-section-title {
+        font-size: 1.4em;
+    }
+
+    .menu-card img {
+        height: 140px;
+    }
+
+    .menu-item-name {
+        font-size: 1em;
+    }
+
+    .menu-item-description, .menu-item-price {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 576px) {
+    .menu-title {
+        font-size: 1.5em;
+    }
+
+    .menu-section-title {
+        font-size: 1.3em;
+    }
+
+    .menu-card img {
+        height: 120px;
+    }
+
+    .menu-item-name {
+        font-size: 0.95em;
+    }
+
+    .menu-item-description, .menu-item-price {
+        font-size: 0.75em;
+    }
+
+    .menu-card-content {
+        padding: 15px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
