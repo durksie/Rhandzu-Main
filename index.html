@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="./Assets/images/rlogo.png" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>Rhandzu Bakery</title>
+  <link rel="stylesheet" href="./Assets/css/styles.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="./Assets//images/rlogo.png" alt="Bakery Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+   
+    <div class="burger-menu" onclick="toggleMenu()">
+      <div class="line1"></div>
+      <div class="line2"></div>
+      <div class="line3"></div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1>Welcome to Rhandzu Bakery <br>& Confectionery</h1>
+                <p>Indulge in our freshly baked goods, crafted with love and the finest ingredients. Experience the taste of tradition.</p>
+                <a href="#menu" class="cta-button">Booking</a>
+            </div>
+        </div>
+    </section>
+
+    <!--mmmmmmmmmmmmmm-->
+    
+  <div class="slideshow">
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./Assets/images/pictures/r14.jpeg" class="d-block w-100" alt="..."  height="900px">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>First slide label</h5>
+                    <p>Some representative placeholder content for the first slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./Assets/images/pictures/r13.jpeg" class="d-block w-100" alt="..." height="900px">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Second slide label</h5>
+                    <p>Some representative placeholder content for the second slide.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="./Assets/images/pictures/r3.jpeg" class="d-block w-100" alt="..."  height="900px">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5>Third slide label</h5>
+                    <p>Some representative placeholder content for the third slide.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </div>
+    <!--mmmmmmmmmm-->
+
+    <div class="container">
+        <section class="about-section">
+            <section class="image-section">
+                <img src="./Assets/images/pictures/r9.jpeg" alt="Sweet Delights Bakery">
+            </section>
+            
+            <section class="content-section">
+                <h1 class="title">Sweet Delights Bakery</h1>
+                
+                <p class="description">
+                    Since 2010, Sweet Delights Bakery has been filling homes and hearts 
+                    with the warmth of freshly baked goods. Our story began with a simple 
+                    passion for creating delicious treats that bring people together. 
+                    Every day, our master bakers craft artisanal breads, pastries, and 
+                    cakes using time-honored recipes and the finest ingredients.
+                </p>
+
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">Fresh Daily</div>
+                        <div class="stat-label">Baked Every Morning</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">5:00 AM</div>
+                        <div class="stat-label">First Batch Ready</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">Local Best</div>
+                        <div class="stat-label">3 Years Running</div>
+                    </div>
+                </div>
+
+                <button class="mission-btn" onclick="openModal()">Our Mission</button>
+            </section>
+        </section>
+    </div>
+
+    <!-- Modal -->
+    <div id="missionModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 class="modal-title">Our Mission</h2>
+            <p class="modal-text">
+                At Sweet Delights Bakery, our mission is to create moments of joy 
+                through the art of baking. We believe in preserving traditional 
+                baking methods while embracing innovation to deliver exceptional 
+                quality and taste. Our commitment extends beyond just baking – 
+                we strive to be a warm, welcoming place where community members 
+                can gather and create lasting memories over fresh-baked goods.
+            </p>
+            <div class="values-list">
+                <h3>Our Values:</h3>
+                <ul>
+                    <li>Quality ingredients, no compromises</li>
+                    <li>Traditional recipes with modern twists</li>
+                    <li>Sustainable and local sourcing</li>
+                    <li>Community-focused approach</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+  
+
+    <section class="menuu">
+        <div class="menu-container">
+            <h1 class="menu-title">Our Menu</h1>
+
+            <section class="menu-section">
+                <h2 class="menu-section-title">Breads</h2>
+                <div class="card-grid">
+                    <div class="menu-card">
+                        <img src="./Assets/images/pictures/r7.jpeg" alt="Sourdough Loaf">
+                        <div class="menu-card-content">
+                            <span class="menu-item-name">Sourdough Loaf</span>
+                            <p class="menu-item-description">Traditional sourdough with a crispy crust and soft interior.</p>
+                            <span class="menu-item-price">R13.00</span>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="./Assets/images/pictures/r1.jpeg" alt="Multigrain Bread">
+                        <div class="menu-card-content">
+                            <span class="menu-item-name">Red cake</span>
+                            <p class="menu-item-description">Indulge in our delicious Red Cake, made with wholesome seeds and grains.</p>
+                            <span class="menu-item-price">R6.00</span>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="./Assets/images/pictures/r6.jpeg" alt="Baguette">
+                        <div class="menu-card-content">
+                            <span class="menu-item-name">Hot crosbun</span>
+                            <p class="menu-item-description">Savor the taste of our traditional Hot Cross Bun</p>
+                            <span class="menu-item-price">R30.50</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="menu-section">
+                <h2 class="menu-section-title">Pastries</h2>
+                <div class="card-grid">
+                    <div class="menu-card">
+                        <img src="./Assets/images/pexels-pixabay-267308.jpg" alt="Croissant">
+                        <div class="menu-card-content">
+                            <span class="menu-item-name">Croissant</span>
+                            <p class="menu-item-description">Flaky and buttery, made with authentic French ingredients.</p>
+                            <span class="menu-item-price">R12.50</span>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="./Assets/images/pexels-isaw-company-66472-1005406.jpg" alt="Chocolate Croissant">
+                        <div class="menu-card-content">
+                            <span class="menu-item-name">Chocolate Croissant</span>
+                            <p class="menu-item-description">Delicious croissant filled with rich, dark chocolate.</p>
+                            <span class="menu-item-price">R3.00</span>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="./Assets/images/pexels-polina-tankilevitch-4109781.jpg" alt="Danish Pastry">
+                        <div class="menu-card-content">
+                            <span class="menu-item-name">Danish Pastry</span>
+                            <p class="menu-item-description">Sweet pastry filled with fruit or custard, topped with glaze.</p>
+                            <span class="menu-item-price">R3.00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="menu-section">
+                <h2 class="menu-section-title">Cakes</h2>
+                <div class="card-grid">
+                    <div class="menu-card">
+                        <img src="./Assets/images/pexels-polina-tankilevitch-4109781.jpg" alt="Classic Cheesecake">
+                        <div class="menu-card-content">
+                            <span class="menu-item-name">Classic Cheesecake</span>
+                            <p class="menu-item-description">Rich and creamy cheesecake with a graham cracker crust.</p>
+                            <span class="menu-item-price">R200.00</span>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="./Assets/images/pexels-polina-tankilevitch-4109781.jpg" alt="Chocolate Fudge Cake">
+                        <div class="menu-card-content">
+                            <span class="menu-item-name">Chocolate Fudge Cake</span>
+                            <p class="menu-item-description">Decadent chocolate cake with layers of fudge frosting.</p>
+                            <span class="menu-item-price">R22.00</span>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="./Assets/images/pexels-polina-tankilevitch-4109781.jpg" alt="Red Velvet Cake">
+                        <div class="menu-card-content">
+                            <span class="menu-item-name">Red Velvet Cake</span>
+                            <p class="menu-item-description">Moist red velvet cake with a hint of cocoa and cream cheese frosting.</p>
+                            <span class="menu-item-price">R224.00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="menu-section">
+                <h2 class="menu-section-title">Cookies</h2>
+                <div class="card-grid">
+                    <div class="menu-card">
+                        <img src="./Assets/images/pexels-polina-tankilevitch-4109781.jpg" alt="Chocolate Chip Cookie">
+                        <div class="menu-card-content">
+                            <span class="menu-item-name">Chocolate Chip Cookie</span>
+                            <p class="menu-item-description">Classic cookie filled with gooey chocolate chips.</p>
+                            <span class="menu-item-price">R9.50</span>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="./Assets/images/pexels-polina-tankilevitch-4109781.jpg" alt="Oatmeal Raisin Cookie">
+                        <div class="menu-card-content">
+                            <span class="menu-item-name">Oatmeal Raisin Cookie</span>
+                            <p class="menu-item-description">Chewy cookie with oats and sweet raisins.</p>
+                            <span class="menu-item-price">R11.50</span>
+                        </div>
+                    </div>
+                    <div class="menu-card">
+                        <img src="./Assets/images/pexels-polina-tankilevitch-4109781.jpg" alt="Macadamia Nut Cookie">
+                        <div class="menu-card-content">
+                            <span class="menu-item-name">Macadamia Nut Cookie</span>
+                            <p class="menu-item-description">Soft and buttery, filled with macadamia nuts and white chocolate.</p>
+                            <span class="menu-item-price">R22.00</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            </div>
+    </section>
+    
+  
+  <script src="./Assets/javascript/script.js"></script>
+
+
+
+  <!-- Footer -->
+<footer class="footer">
+    <div class="footer-content container">
+      <div class="footer-logo">
+        <img src="./Assets/images/rlogo.png" alt="Bakery Logo">
+       
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>Email: info@rhandzubakery.com</p>
+        <p>Phone: +27 12 345 6789</p>
+        <p>Address: 123 mdavula St, Limpopo</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Rhandzu Bakery & Confectionery. All Rights Reserved.</p>
+    </div>
+  </footer>
+  
+</body>
+</html>
